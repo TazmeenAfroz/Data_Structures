@@ -141,12 +141,12 @@ class List
         return length;
     }
    
-    void copy(List& l)
+     void copy(List& l)
     {
-        node* curr = head;
+        node* curr = l.head;
         while(curr != NULL)
         {
-            l.insert(curr->data,l.len()+1);
+            insert(curr->data,length+1);
             curr = curr->next;
         }
     }
@@ -168,7 +168,7 @@ class List
         cout<<l.find(30)<<endl;
         cout<<l.len()<<endl;
         List l1;
-        l.copy(l1);
+        l1.copy(l);
         l1.display();
         l.clear();
         l.display();
