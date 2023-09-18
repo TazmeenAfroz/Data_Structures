@@ -95,6 +95,7 @@ void List:: remove(int pos)
     for(int i = 1; i < pos; i++)
     {
         next();
+    }
         for(int i = pos; i < length; i++)
         {
             *curr = *(curr+1);
@@ -103,7 +104,7 @@ void List:: remove(int pos)
         length--;
     }
 
-}
+
 
 int List::find(int val)
 {
