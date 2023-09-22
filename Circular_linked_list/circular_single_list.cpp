@@ -194,37 +194,14 @@ class Cir_list
 
 };
 
-int Josephus(int N, int M)
- {
-    Cir_list l;
-    for(int i = 1 ; i <= N ; i++)
-    {
-        l.insert(i,i);
-    }
-    int pos = 1;
-    while(l.len() > 1)
-    {
-        pos = (pos + M - 1) % l.len();
-        if(pos == 0)
-        {
-            pos = l.len();
-        }
-        l.remove(pos);
-    }
-    return l.find(1);
-    }
 
 
  int main()
  {  
-    int N,M;
-    cout<<"Enter the number of people"<<endl;
-    cin>>N;
-    cout<<"Enter the number of people to be skipped"<<endl;
-    cin>>M;
-    cout<<"The person who survives is "<<Josephus(N,M)<<endl;
-    
-
-        
+  Cir_list c;
+     c.insert(1,1);
+       c.insert(2,2);
+  c.insert(3,3);
+        c.display();
     return 0;
  }
