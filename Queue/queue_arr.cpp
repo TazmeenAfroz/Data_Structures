@@ -22,16 +22,20 @@ Queue(int s)
 }
 void enqueue(int val)
 { 
-    node* n = new node(val);
-    if (head == NULL) {
-        head = n;
-    } else {
-        node* temp = head;
-        while (temp->next != NULL) {
-            temp = temp->next;
-        }
-        temp->next = n;
+    if(length == capacity)
+    {
+        cout<<"Queue is full"<<endl;
+        return;
     }
+    if(rear == capacity-1)
+    {
+        rear = 0;
+    }
+    else
+    {
+        rear++;
+    }
+    arr[rear] = val;
     length++;
 }
 
